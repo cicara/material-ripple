@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="test test-1" style="width: 100px; height: 100px; background-color: lightblue;"></div>
+  <div class="test test-2" style="width: 100px; height: 100px; background-color: lightcoral;"></div>
+  <div class="test test-3" style="width: 100px; height: 100px; background-color: lightgreen;"></div>
+
+  <button class="test-button" style="padding: 12px;">ABC</button>
+  <button class="destory" style="padding: 12px;">销毁</button>
+
+  <script type="module">
+    import { Ripple } from '../dist/index.js';
+
+    new Ripple(
+      {
+        element: document.querySelector('.test.test-1'),
+      },
+    );
+    new Ripple(
+      {
+        color: 'rgb(167 25 25 / 72%)',
+        element: document.querySelector('.test.test-2'),
+        centered: true,
+      },
+    );
+    new Ripple(
+      {
+        color: 'rgb(43 115 43 / 75%)',
+        element: document.querySelector('.test.test-3'),
+        unbounded: true,
+      },
+    );
+    const ripple = new Ripple(
+      {
+        element: document.querySelector('.test-button'),
+      },
+    );
+    document.querySelector('.destory').addEventListener('click', () => ripple.destroy());
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "name": "@cicara/material-ripple",
+  "version": "0.0.1",
+  "description": "material ripple effect implemented using native js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "scripts": {
+    "start": "npm run build:dev -- --watch",
+    "build": "NODE_ENV=production npm run build:dev",
+    "build:dev": "rollup --config rollup.config.js",
+    "prepublish": "npm run build"
+  },
+  "author": "鸿则 <hungtcs@outlook.com> (https://github.com/hungtcs)",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^8.2.0",
+    "rollup": "^2.41.2",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.2.3"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cicara/material-ripple.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/cicara/material-ripple/issues"
+  },
+  "homepage": "https://github.com/cicara/material-ripple#readme"
+}

@@ -14,6 +14,22 @@
 
   <button class="test-button" style="padding: 12px;">ABC</button>
   <button class="destory" style="padding: 12px;">销毁</button>
+  <br />
+
+  <style>
+    .test-button-2 {
+      position: relative;
+    }
+    .ripple-wrapper {
+      inset: 0px;
+      position: absolute;
+      pointer-events: none;
+    }
+  </style>
+  <button class="test-button-2" style="padding: 12px;">
+    <span>ABC</span>
+    <div class="ripple-wrapper"></div>
+  </button>
 
   <script type="module">
     import { Ripple } from './dist/index.esm.js';
@@ -45,6 +61,13 @@
       },
     );
     document.querySelector('.destory').addEventListener('click', () => ripple.destroy());
+
+    new Ripple(
+      {
+        element: document.querySelector('.test-button-2'),
+        rippleWrapper: document.querySelector('.test-button-2 .ripple-wrapper'),
+      },
+    );
   </script>
 </body>
 </html>

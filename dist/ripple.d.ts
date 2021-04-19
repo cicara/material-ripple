@@ -6,11 +6,13 @@ export interface RippleOptions {
     unbounded?: boolean;
     exitDuration?: number;
     enterDuration?: number;
+    rippleWrapper?: HTMLElement;
 }
 export declare class Ripple {
     private static style;
     private options;
     private get element();
+    private get rippleWrapper();
     constructor(options: RippleOptions);
     destroy(): void;
     private init;

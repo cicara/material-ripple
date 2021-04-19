@@ -7,6 +7,8 @@ export interface RippleOptions {
   unbounded?: boolean;
   exitDuration?: number;
   enterDuration?: number;
+
+  rippleWrapper?: HTMLElement;
 }
 
 export class Ripple {
@@ -18,6 +20,10 @@ export class Ripple {
     return this.options.element;
   }
 
+  private get rippleWrapper() {
+    return this.options.rippleWrapper!;
+  }
+
   constructor(options: RippleOptions) {
     this.options = Object.assign<Partial<RippleOptions>, RippleOptions>(
       {
@@ -26,6 +32,7 @@ export class Ripple {
         unbounded: false,
         exitDuration: 1024,
         enterDuration: 512,
+        rippleWrapper: options.element,
       },
       options,
     );
@@ -82,7 +89,7 @@ export class Ripple {
     style.pointerEvents = 'none';
     style.transition = `transform ${ this.options.enterDuration }ms ease-out 0s, opacity ${ this.options.exitDuration }ms ease-out ${ this.options.enterDuration! / 2 }ms`;
 
-    this.element.appendChild(ripple);
+    this.rippleWrapper.appendChild(ripple);
     const { width, height, top, left, right, bottom } = this.element.getBoundingClientRect();
 
     if(this.options.centered) {

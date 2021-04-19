@@ -1,6 +1,6 @@
 {
   "name": "@cicara/material-ripple",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "material ripple effect implemented using native js",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
